@@ -15,6 +15,7 @@ data "aws_ami" "amazon_linux" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = "t2.micro"
+  subnet_id = "subnet-0da08b521a0e085ce"
 
   user_data = <<-EOF
     #!/bin/bash
